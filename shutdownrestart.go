@@ -36,8 +36,8 @@ func shutdownHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func restartHandler(w http.ResponseWriter, r *http.Request) {
-	executeNonBlocking("sudo shutdown -h now &")
-	fmt.Fprintf(w, "Shutting Down")
+	executeNonBlocking("sudo shutdown -r now &")
+	fmt.Fprintf(w, "Restarting")
 }
 
 func main() {
